@@ -1,8 +1,11 @@
 {% if session.username %}
 <p>Tällä sivulla on paljon sisältöä</p>
+<form action="/logout" method="POST">
+    <input type="submit" value="Kirjaudu ulos">
+</form>
 {% else %}
 <form action="/login" method="POST">
-    <p>Tunnus:<br>
+    <p>Käyttäjänimi:<br>
         <input type="text" name="username">
     </p>
     <p>Salasana:<br>
@@ -10,4 +13,5 @@
     </p>
     <input type="submit" value="Kirjaudu">
 </form>
+<a href="/register">Luo uusi käyttäjä</a>
 {% endif %}
