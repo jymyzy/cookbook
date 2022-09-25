@@ -26,6 +26,7 @@ CREATE TABLE favourites (
     user_id INTEGER NOT NULL REFERENCES users
 );
 CREATE TABLE stars (
+    user_id INTEGER NOT NULL REFERENCES users,
     recipe_id INTEGER NOT NULL REFERENCES recipes,
     star_rating INTEGER NOT NULL CHECK (
         star_rating >= 0
