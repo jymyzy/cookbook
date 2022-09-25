@@ -1,5 +1,8 @@
 # cookbook
 
-Allows users to look up, share and rate different recipes
+Sovelluksen tilanne:
 
-The app will also have an ability to search for recipies with specific ingredients
+-   Tietokanta suunniteltu (schema.sql)
+-   Kirjautuminen ja rekisteröityminen toimii
+
+Sovellusta voi käydä testaamassa [Herokussa](https://keitto-kirja.herokuapp.com/)
