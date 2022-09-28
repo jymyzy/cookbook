@@ -17,7 +17,6 @@ def login():
         username = request.form["username"]
         password = request.form["password"]
         password_hash = get_password_hash(db, username)
-        print(password_hash, password)
         if check_password_hash(password_hash, password):
             session["username"] = username
             return redirect("/")
