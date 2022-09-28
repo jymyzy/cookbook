@@ -1,9 +1,7 @@
-from flask import Flask, request, render_template, redirect, session
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from werkzeug.security import check_password_hash, generate_password_hash
 from os import getenv
 from dotenv import load_dotenv
-from db_interactions import create_user, get_password_hash
 
 load_dotenv()
 
