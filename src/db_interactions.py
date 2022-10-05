@@ -11,6 +11,7 @@ def create_user(db, username: str, password: str):
     print(f"User {username} created successfully")
 
 
-def get_password_hash(db, username: str):
-    sql = "SELECT password FROM users WHERE username = :username"
-    return db.session.execute(sql, {"username": username}).fetchone()[0]
+def get_user(db, username: str):
+    sql = "SELECT * FROM users WHERE username = :username"
+    return db.session.execute(sql, {"username": username}).fetchone()
+

@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, redirect, session
 from werkzeug.security import check_password_hash
 from app import app, db
 
-from db_interactions import create_user, get_password_hash
+from db_interactions import create_user, get_user
 
 
 # Pages
@@ -16,9 +16,14 @@ def login():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
-        password_hash = get_password_hash(db, username)
-        if check_password_hash(password_hash, password):
+        user = get_user(db, username)
+        if user == None:
+            return render_template(
+                "error.html", error="Käyttäjää ei löytynyt", return_to="/"
+            )
+        if check_password_hash(user.password, password):
             session["username"] = username
+            session["user_id"] = user.id
             return redirect("/")
         else:
             return render_template(
@@ -32,6 +37,7 @@ def login():
 @app.route("/logout", methods={"POST"})
 def logout():
     del session["username"]
+    del session["user_id"]
     return redirect("/")
 
 
