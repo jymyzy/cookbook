@@ -15,3 +15,9 @@ def get_user(db, username: str):
     sql = "SELECT * FROM users WHERE username = :username"
     return db.session.execute(sql, {"username": username}).fetchone()
 
+
+def create_recipe(db, name: str, description: str, instructions: str):
+    sql = "INSERT INTO recipes (name, description, instructions) VALUES (:name, :description, :instructions)"
+    db.session.execute(
+        sql, {"name": name, "description": description, "instructions": instructions}
+    )
