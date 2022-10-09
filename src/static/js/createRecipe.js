@@ -12,8 +12,8 @@ function selectIngredient(name, id) {
 	let html = `
 	<div class="ingredient">
 		<p>${name}</p>
-		<input type="text" class="ingredientInput" name="quantity" placeholder="Määrä"/>
-		<input type="text" class="ingredientInput" name="unit" placeholder="Yksikkö"/>
+		<input type="text" class="ingredientInput" name="ingredientQuantity${id}" placeholder="Määrä"/>
+		<input type="text" class="ingredientInput" name="ingredientUnit${id}" placeholder="Yksikkö"/>
 	</div>
 	`;
 	let element = htmlToElement(html);
