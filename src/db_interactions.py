@@ -16,6 +16,12 @@ def get_user(db, username: str):
     return db.session.execute(sql, {"username": username}).fetchone()
 
 
+# Returns all ingredients, not for a specific recipe
+def get_ingreadients(db):
+    sql = "SELECT * FROM ingredients"
+    return db.session.execute(sql, {}).fetchall()
+
+
 def create_recipe(db, name: str, description: str, instructions: str):
     sql = "INSERT INTO recipes (name, description, instructions) VALUES (:name, :description, :instructions)"
     db.session.execute(
