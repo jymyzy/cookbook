@@ -1,0 +1,41 @@
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+<script src="{{url_for('static', filename='js/createRecipe.js') }}"></script>
+
+{% if session.username %}
+<form action="/createRecipe" method="POST" id="recipeForm">
+    <div>
+        <div class="recipeInfo">
+            <div>
+                <input type="text" class="recipeTextBox" name="recipeName" placeholder="Reseptin nimi" />
+                <input type="text" class="recipeTextBox" name="recipeDescription" placeholder="Reseptin kuvaus" />
+            </div>
+            <div class="ingredientList">
+                {% for ingredient in ingredients %}
+                <div class="ingredient" id="{{ingredient.id}}">
+                    <p>{{ ingredient.name }}</p>
+                    <button onclick='selectIngredient("{{ingredient.name}}", "{{ingredient.id}}")'>Lisää
+                        ainesosa</button>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="ingredientList" id="selectedIngredients"></div>
+        </div>
+        <textarea name="recipeInstructions" class="recipeTextArea" form="recipeForm" rows="4" cols="50"></textarea>
+        <br />
+        <input type="submit" value="Luo resepti" />
+    </div>
+</form>
+{% else %}
+<form action="/login" method="POST">
+    <p>
+        Käyttäjänimi:<br />
+        <input type="text" name="username" />
+    </p>
+    <p>
+        Salasana:<br />
+        <input type="password" name="password" />
+    </p>
+    <input type="submit" value="Kirjaudu" />
+</form>
+<a href="/register">Luo uusi käyttäjä</a>
+{% endif %}
