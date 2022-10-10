@@ -2,19 +2,19 @@
 
 Sovellus, jossa ihmiset voivat jakaa, ja selata erilaisia reseptejä.
 
-Ominaisuuksia:
+### Ominaisuuksia:
 
 -   Reseptien lisääminen suosikkeihin, josta ne löytää helposti
 -   Reseptien arvostelu
 -   Ainesosa- ja määräkohtainen haku
 
-Sovelluksen tilanne:
+### Sovelluksen tilanne:
 
 -   Reseptejä voi nyt lisätä
 -   Kirjautuminen ja rekisteröityminen toimii
 -   Tietokanta suunniteltu
 
-Vielä tehtävää:
+### Vielä tehtävää:
 
 -   Parempi virhetilanteiden tarkistaminen
 -   Reseptien selaaminen
