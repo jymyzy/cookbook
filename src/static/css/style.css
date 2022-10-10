@@ -1,0 +1,33 @@
+.ingredientList {
+    display: inline-block;
+    width: 42vw;
+    height: 50vh;
+    margin: 2vw;
+    overflow-y: scroll;
+}
+
+.ingredient {
+    display: flex;
+    flex-direction: row;
+    border: 5px solid black;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.ingredientInput {
+    margin-left: auto;
+}
+
+.recipeInfo {
+    margin: 20px;
+}
+
+.recipeTextBox {
+    width: 60vw;
+    margin: 10px;
+}
+
+.recipeTextArea {
+    margin: 10px;
+}
